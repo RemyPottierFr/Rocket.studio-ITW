@@ -13,7 +13,6 @@
 
   export let id;
   onMount(() => {
-    console.log(id);
     if (id !== 1 && id !== 2) {
       goto('/');
     }

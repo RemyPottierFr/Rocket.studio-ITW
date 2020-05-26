@@ -24,6 +24,10 @@ const aliasConf = {
       find: /^components\/(.*svelte)/,
       replacement: path.resolve(__dirname, 'src', 'components', '$1'),
     },
+    {
+      find: /^static\/(.*.*)/,
+      replacement: path.resolve(__dirname, 'static', '$1'),
+    },
   ],
 };
 
