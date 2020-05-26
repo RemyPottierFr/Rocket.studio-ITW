@@ -11,7 +11,7 @@
     Welcome on my solutions for the interview of Rocket Studio
   </h1>
   <div class="flex flex-col items-center">
-    <h2 class="text-2xl my-4">To discover solutions you can</h2>
+    <h2 class="text-2xl my-4 text-center">To discover solutions you can</h2>
     <button
       class="bg-orange-600 transition ease-in duration-300 text-white font-bold py-2 px-4 rounded
       text-xl my-4 hover:bg-orange-500 focus:outline-none"
