@@ -8,6 +8,8 @@
     "watch:tailwind": "TAILWIND=true postcss src/styles/tailwind.css -o static/global.css -w",
     "sapper": "sapper dev",
     "dev": "run-p --race watch:tailwind sapper",
+    "lint:prettier": "prettier --check '**/*.{js,ts,svelte,html,json,md,css}'",
+    "format:prettier": "prettier --write '**/*.{js,ts,svelte,html,json,md,css}'",
     "build": "sapper build --legacy",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
@@ -16,11 +18,15 @@
     "test": "run-p --race dev cy:run"
   },
   "dependencies": {
+    "child_process": "^1.0.2",
     "compression": "^1.7.1",
     "cssnano": "^4.1.10",
+    "husky": "^4.2.5",
     "polka": "next",
     "postcss-cli": "^7.1.1",
     "postcss-import": "^12.0.1",
+    "prettier": "^2.0.5",
+    "prettier-plugin-svelte": "^1.1.0",
     "sirv": "^0.4.0",
     "tailwindcss": "^1.4.6"
   },
@@ -40,5 +46,11 @@
     "rollup-plugin-terser": "^5.3.0",
     "sapper": "^0.27.0",
     "svelte": "^3.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint:prettier && node ./husky.hook.js",
+      "pre-push": "yarn lint:prettier && node ./husky.hook.js"
+    }
   }
 }

@@ -1,0 +1,7 @@
+__sapper__
+.rpt2_cache
+coverage
+storybook-static
+node_modules
+static/global.css
+_template
