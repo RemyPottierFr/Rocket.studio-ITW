@@ -2,11 +2,19 @@
   import { goto } from '@sapper/app';
   import { dataQuestionA } from 'static/data';
 
+  // Result variable to display when result > 0
   let result = 0;
+
+  /**
+   * This function gonna calculate result of fuel need just for mass of rocket
+   */
   const findResult = data => {
-    let r = 0;
-    data.map(x => (r += Math.floor(x / 3) - 2));
-    result !== r && data.map(x => (result += Math.floor(x / 3) - 2));
+    // temp variable for comparaison to avoid multiple assignment of result
+    let temp = 0;
+    //map on data to have temp value of result
+    data.map(x => (temp += Math.floor(x / 3) - 2));
+    //if result is different of tmp (equal 0) result is updated
+    result !== temp && data.map(x => (result += Math.floor(x / 3) - 2));
     return result;
   };
 </script>
