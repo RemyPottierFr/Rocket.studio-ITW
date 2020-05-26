@@ -1,23 +1,22 @@
 <<<<<<< HEAD
 
 # Rocket Studio {JS interview}
+
 **Interview .js pour RS**
 
-***Consignes :*** Emetre une pull request avec vos résolutions algorithmiques commentées et le résultat obtenu aussi en commentaire; vous n'êtes pas obligés de faire tous les exercices. 
+**_Consignes :_** Emetre une pull request avec vos résolutions algorithmiques commentées et le résultat obtenu aussi en commentaire; vous n'êtes pas obligés de faire tous les exercices.
 
 ---
 
-## 🚀 Exercice A : Décolage d'une fusée 
+## 🚀 Exercice A : Décolage d'une fusée
 
-
-
-Pour décoller, une fusée a besoin d'une quantité de carburant. 
+Pour décoller, une fusée a besoin d'une quantité de carburant.
 Vous devez déterminer cette quantité de carburant en prenant en compte le poids des différents modules (satellite(s), vaisseau spatial, sonde(s), instruments) constituant notre fusée.
 
-### Question 1 : Masse module 🛰️ 
+### Question 1 : Masse module 🛰️
 
-Pour obtenir la quantité de carburant il faut : 
-*Diviser une masse ℵ d'un module par trois, l'arrondir à l'unité inférieure et soustraire 2.*
+Pour obtenir la quantité de carburant il faut :
+_Diviser une masse ℵ d'un module par trois, l'arrondir à l'unité inférieure et soustraire 2._
 
 Donc :
 
@@ -34,10 +33,10 @@ Le compteur de carburant doit connaître le besoin total en carburant. Pour le t
 
 ---
 
-### Question 2 : Masse carburant ⛽ 
+### Question 2 : Masse carburant ⛽
 
-Evidemment, vous avez oublié que le carburant possède lui aussi sa propre masse. 
-Le carburant lui-même nécessite du carburant tout comme un module - *prenez sa masse, divisez-la par trois, arrondissez à l'unité inférieure et soustrayez 2.* Cependant, ce carburant a aussi besoin de carburant, et ce carburant a besoin de carburant, et ainsi de suite. 
+Evidemment, vous avez oublié que le carburant possède lui aussi sa propre masse.
+Le carburant lui-même nécessite du carburant tout comme un module - _prenez sa masse, divisez-la par trois, arrondissez à l'unité inférieure et soustrayez 2._ Cependant, ce carburant a aussi besoin de carburant, et ce carburant a besoin de carburant, et ainsi de suite.
 
 Donc, pour chaque masse de module, il faut calculer son carburant et l'ajouter au total. Ensuite, traitez la quantité de carburant que vous venez de calculer comme la masse d'entrée et répétez le processus, en continuant jusqu'à ce que le besoin en carburant soit nul ou négatif. Par exemple :
 
@@ -53,18 +52,18 @@ Donc, pour chaque masse de module, il faut calculer son carburant et l'ajouter a
 
 ## 🧬 Exercice B : Court-circuit
 
-Zut, votre calcul du carburant est peut-être bon, mais il faut réparer l'assistance gravitationnelle : 
+Zut, votre calcul du carburant est peut-être bon, mais il faut réparer l'assistance gravitationnelle :
 
-### Question 1 : Manhattan Distance 📐 
+### Question 1 : Manhattan Distance 📐
 
-En ouvrant le panneau avant du module gravitationel, on découvre un enchevêtrement de fils. Plus précisément, deux fils sont reliés à un port central et se prolongent vers l'extérieur sur une grille. Vous tracez le chemin que prend chaque fil lorsqu'il quitte le port central, un fil par ligne de texte comme ceci : 
+En ouvrant le panneau avant du module gravitationel, on découvre un enchevêtrement de fils. Plus précisément, deux fils sont reliés à un port central et se prolongent vers l'extérieur sur une grille. Vous tracez le chemin que prend chaque fil lorsqu'il quitte le port central, un fil par ligne de texte comme ceci :
 
-- *fil n°1 :* R8,U5,L5,D3
-- *fil n°2 :* U7,R6,D4,L4
+- _fil n°1 :_ R8,U5,L5,D3
+- _fil n°2 :_ U7,R6,D4,L4
 
 Les fils se tordent et tournent, mais les deux fils se croisent parfois. Pour réparer le circuit, vous devez trouver le point d'intersection le plus proche du port central. Comme les fils sont sur une grille, utiliser la [distance de Manhattan](https://fr.wikipedia.org/wiki/Distance_de_Manhattan) pour cette mesure. Bien que les fils se croisent techniquement au niveau du port central où ils commencent tous les deux, ce point ne compte pas, et un fil ne compte pas non plus comme se croisant avec lui-même.
 
-Par exemple, si le chemin du premier fil est **D8,H5,G5,B3**, alors en partant du port central (o), il va de ***8 case à droite, 5 en haut, 5 à gauche, et finalement de 3 en bas*** représenté comme ceci : 
+Par exemple, si le chemin du premier fil est **D8,H5,G5,B3**, alors en partant du port central (o), il va de **_8 case à droite, 5 en haut, 5 à gauche, et finalement de 3 en bas_** représenté comme ceci :
 
 ```
 ...........
@@ -79,8 +78,7 @@ Par exemple, si le chemin du premier fil est **D8,H5,G5,B3**, alors en partant d
 ...........
 ```
 
-
-Ensuite, si le chemin du deuxième fil est **H7,D6,B4,G4**, ***il monte de 7, droite 6, descend de 4 et gauche 4*** comme ceci :
+Ensuite, si le chemin du deuxième fil est **H7,D6,B4,G4**, **_il monte de 7, droite 6, descend de 4 et gauche 4_** comme ceci :
 
 ```
 ...........
@@ -95,20 +93,20 @@ Ensuite, si le chemin du deuxième fil est **H7,D6,B4,G4**, ***il monte de 7, dr
 ...........
 ```
 
-Ces fils se croisent à deux endroits **(marqués X)**, mais celui en bas à gauche est plus proche du port central : sa *distance Manhattan* est de 3 + 3 = 6.
+Ces fils se croisent à deux endroits **(marqués X)**, mais celui en bas à gauche est plus proche du port central : sa _distance Manhattan_ est de 3 + 3 = 6.
 
 Voici quelques exemples supplémentaires :
 
 - 1. **D75,B30,D83,H83,G12,B49,D71,H7,G72**
-  2. **H62,D66,H55,D34,B71,D55,B58,D83** 
+  2. **H62,D66,H55,D34,B71,D55,B58,D83**
   - Distance de **159**
 - 1. **D98,H47,D26,B63,D33,H87,G62,B20,D33,H53,D51**
   2. **H98,D91,B20,D16,B67,D40,H7,D15,H6,D7**
+
   - Distance de **135**
-  
-  
-**Q1 : Quelle est la distance de Manhattan entre le port central et l'intersection la plus proche ?** 
-  
+
+**Q1 : Quelle est la distance de Manhattan entre le port central et l'intersection la plus proche ?**
+
 📎 Voici vos fils : [INPUT](https://github.com/7antra/Rocket.studio-ITW/blob/master/B_input-fils.txt) (un fil par ligne)
 
 ---
@@ -141,16 +139,17 @@ Cependant, l'intersection en haut à droite est meilleure : le premier fil prend
 Voici les meilleurs pas pour les exemples supplémentaires du dessus :
 
 - 1. **D75,B30,D83,H83,G12,B49,D71,H7,G72**
-  2. **H62,D66,H55,D34,B71,D55,B58,D83** 
+  2. **H62,D66,H55,D34,B71,D55,B58,D83**
   - **610** pas.
 - 1. **D98,H47,D26,B63,D33,H87,G62,B20,D33,H53,D51**
   2. **H98,D91,B20,D16,B67,D40,H7,D15,H6,D7**
+
   - **410** pas.
-  
+
 **Quelle est la plus petite combinaison de pas que les fils doivent franchir pour atteindre une intersection ?**
 
-📎 Les fils n'ont pas changés : [INPUT](https://github.com/7antra/Rocket.studio-ITW/blob/master/B_input-fils.txt)
-=======
+# 📎 Les fils n'ont pas changés : [INPUT](https://github.com/7antra/Rocket.studio-ITW/blob/master/B_input-fils.txt)
+
 # sapper-template
 
 The default [Sapper](https://github.com/sveltejs/sapper) template, available for Rollup and webpack.
@@ -250,4 +249,5 @@ npm install -D @sveltejs/svelte-virtual-list
 ## Bugs and feedback
 
 Sapper is in early development, and may have the odd rough edge here and there. Please be vocal over on the [Sapper issue tracker](https://github.com/sveltejs/sapper/issues).
->>>>>>> Setup project with tailwindCss and rollup
+
+> > > > > > > Setup project with tailwindCss and rollup
