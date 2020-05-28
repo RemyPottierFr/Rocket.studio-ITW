@@ -35,8 +35,9 @@
     <h1 class="text-3xl my-4">Question 1 : Masse module 🛰️</h1>
     <a
       href="https://github.com/RemyPottierFr/Rocket.studio-ITW#question-1--masse-module-%EF%B8%8F"
-      class="text-2xl pl-4 flex items-center"
+      class="text-2xl pl-4"
       title="See ressource"
+      target="_blank"
     >
       📎 See ressource
     </a>

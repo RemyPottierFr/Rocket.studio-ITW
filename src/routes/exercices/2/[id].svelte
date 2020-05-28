@@ -19,6 +19,10 @@
   });
 </script>
 
+<svelte:head>
+  <title>🧬 Exercice B</title>
+</svelte:head>
+
 {#if id === 1}
   <Ex2Question1 />
 {:else if id === 2}

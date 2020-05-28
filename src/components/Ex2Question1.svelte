@@ -1,8 +1,12 @@
 <script>
   import { goto } from '@sapper/app';
   import { dataExerciceBString1, dataExerciceBString2 } from 'static/data';
-  const result = 0;
-  const findManathanDistance = (string1, string2) => {};
+  import findManathanDistance from 'utils/scripts/manathanDistance';
+  let result = 0;
+  const findResult = (string1, string2) => {
+    result === 0 && (result = findManathanDistance(string1, string2));
+    return true;
+  };
 </script>
 
 <section class="p-4">
@@ -19,13 +23,16 @@
 
   <div class="flex flex-col">
     <h1 class="text-3xl my-4">Question 1 : Manhattan Distance 📐</h1>
-    <a
-      href="https://github.com/RemyPottierFr/Rocket.studio-ITW#question-1--manhattan-distance-"
-      class="text-2xl pl-4 flex items-center"
-      title="See ressource"
-    >
-      📎 See ressource
-    </a>
+    <span>
+      <a
+        href="https://github.com/RemyPottierFr/Rocket.studio-ITW#question-1--manhattan-distance-"
+        class="text-2xl pl-4"
+        title="See ressource"
+        target="_blank"
+      >
+        📎 See ressource
+      </a>
+    </span>
   </div>
 
   <div class="flex flex-col my-16">
@@ -36,12 +43,12 @@
     <button
       class="bg-orange-600 transition ease-in duration-300 text-white font-bold py-2 px-4 rounded
       text-xl my-4 hover:bg-orange-500 focus:outline-none mt-8"
-      on:click="{() => findManathanDistance(dataExerciceBString1, dataExerciceBString2)}"
+      on:click="{() => findResult(dataExerciceBString1, dataExerciceBString2)}"
     >
       Find result 🚀
     </button>
     {#if result !== 0}
-      <p class="text-4xl text-center py-8 font-bold">{result} ⛽</p>
+      <p class="text-4xl text-center py-8 font-bold">{result} 📐</p>
     {/if}
   </div>
 

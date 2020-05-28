@@ -28,6 +28,10 @@ const aliasConf = {
       find: /^static\/(.*.*)/,
       replacement: path.resolve(__dirname, 'static', '$1'),
     },
+    {
+      find: /^utils\/(.*.*)/,
+      replacement: path.resolve(__dirname, 'src', 'utils', '$1'),
+    },
   ],
 };
 
